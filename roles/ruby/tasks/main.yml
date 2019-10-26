@@ -22,22 +22,25 @@
     - ruby-build
 
 - name: install build depends by Ruby
-  yum: name={{ item }} state=present
-  with_items:
-    - git-core
-    - gcc
-    - gcc-c++
-    - gdbm-devel
-    - libffi-devel
-    - libselinux-python
-    - libyaml-devel
-    - mysql-devel
-    - ncurses-devel
-    - openssl-devel
-    - sqlite-devel
-    - readline-devel
-    - zlib-devel
   become: yes
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - git-core
+      - gcc
+      - gcc-c++
+      - gdbm-devel
+      - libffi-devel
+      - libselinux-python
+      - libyaml-devel
+      - mysql
+      - mysql-devel
+      - ncurses-devel
+      - openssl-devel
+      - sqlite-devel
+      - readline-devel
+      - zlib-devel
   tags:
     - ruby
     - ruby:install
