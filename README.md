@@ -2,6 +2,7 @@
 Ansible の playbook サンプル
 
 # 前提条件
+Pythonがインストールされていること。
 
 # 利用方法
 
